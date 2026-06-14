@@ -6,7 +6,7 @@
 ;; Maintainer: Al Haji-Ali <abdo.haji.ali at gmail.com>
 ;; Created: Author
 ;; Version: 0.0.2
-;; Package-Requires: ((emacs "28.1") (calfw "2.0"))
+;; Package-Requires: ((emacs "28.1") (calfw "2.0") (calfw-org "2.0"))
 ;; Homepage: https://github.com/haji-ali/maccalfw
 ;; Keywords: calendar
 
