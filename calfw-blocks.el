@@ -200,11 +200,18 @@ If non-nil, blocks in shrunk hours will not be expanded. See
   :group 'calfw-blocks)
 
 (defface calfw-blocks-more-block-face
-  `((t
-     (:foreground ,(calfw-make-fg-color "#FFFFFF" "#FFFFFF")
-                  :background ,(calfw-make-bg-color "#FFFFFF" "#FFFFFF"))))
+  '((((background dark)) (:foreground "white" :background "gray40"))
+    (t (:foreground "black" :background "gray80")))
   "Face for time column. Also used to identify the column."
   :group 'calfw-blocks)
+
+(defun calfw-blocks--setup-more-block-face ()
+  "Set dynamic colors for `calfw-blocks-more-block-face' based on current theme."
+  (set-face-attribute 'calfw-blocks-more-block-face nil
+                      :foreground (calfw-make-fg-color "#FFFFFF" "#FFFFFF")
+                      :background (calfw-make-bg-color "#FFFFFF" "#FFFFFF")))
+
+(add-hook 'after-init-hook #'calfw-blocks--setup-more-block-face)
 
 ;; Block views
 
